@@ -1,25 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ButirKeranjang extends Model
+final class ButirKeranjang extends Model
 {
     protected $table = 'butir_keranjang';
 
-    protected $fillable = [
-        'keranjang_id',
-        'produk_id',
-        'kuantitas',
-    ];
+    // Harga dibaca dari tabel produk saat dihitung, bukan disimpan di keranjang.
+    protected $fillable = ['produk_id', 'kuantitas'];
 
-    public function keranjang(): BelongsTo
+    protected function casts(): array
     {
-        return $this->belongsTo(Keranjang::class, 'keranjang_id');
+        return ['kuantitas' => 'integer'];
     }
 
+    /** @return BelongsTo<Produk, $this> */
     public function produk(): BelongsTo
     {
         return $this->belongsTo(Produk::class, 'produk_id');

@@ -1,25 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Keranjang extends Model
+final class Keranjang extends Model
 {
     protected $table = 'keranjang';
 
-    protected $fillable = [
-        'pengguna_id',
-    ];
+    protected $fillable = [];
 
+    /** @return BelongsTo<Pengguna, $this> */
     public function pengguna(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'pengguna_id');
+        return $this->belongsTo(Pengguna::class, 'pengguna_id');
     }
 
-    public function butirKeranjang(): HasMany
+    /** @return HasMany<ButirKeranjang, $this> */
+    public function butir(): HasMany
     {
         return $this->hasMany(ButirKeranjang::class, 'keranjang_id');
     }
