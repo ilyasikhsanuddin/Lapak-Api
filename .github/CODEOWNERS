@@ -25,11 +25,11 @@
 /tests/Feature/Belanja/                        @hill-py
 
 # D4 Pembayaran dan Saldo
-/app/Models/Dompet.php                         @Fauzy Akhbar
-/app/Models/MutasiSaldo.php                    @Fauzy Akhbar
-/app/Services/BukuBesar.php                    @Fauzy Akhbar
-/app/Console/Commands/PeriksaBuku.php          @Fauzy Akhbar
-/tests/Feature/Dompet/                         @Fauzy Akhbar
+/app/Models/Dompet.php                         @paujihahaha
+/app/Models/MutasiSaldo.php                    @paujihahaha
+/app/Services/BukuBesar.php                    @paujihahaha
+/app/Console/Commands/PeriksaBuku.php          @paujihahaha
+/tests/Feature/Dompet/                         @paujihahaha
 
 # D5 Otorisasi, Audit, dan Kualitas, termasuk seluruh berkas bersama
 /app/Exceptions/                               @ahmadshobahrahmadani-ux
@@ -49,6 +49,6 @@
 /database/migrations/*_1000*.php               @ilyasikhsanuddin
 /database/migrations/*_2000*.php               @vicky123
 /database/migrations/*_3000*.php               @hill-py
-/database/migrations/*_4000*.php               @Fauzy Akhbar
+/database/migrations/*_4000*.php               @paujihahaha
 /database/migrations/*_5000*.php               @ahmadshobahrahmadani-ux
 /database/seeders/DatabaseSeeder.php           @ahmadshobahrahmadani-ux
