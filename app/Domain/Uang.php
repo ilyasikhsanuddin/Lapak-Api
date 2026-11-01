@@ -7,20 +7,20 @@ namespace App\Domain;
 use InvalidArgumentException;
 use JsonSerializable;
 
-/**
- * LP-1: uang adalah bilangan bulat rupiah. Tidak ada float di lapisan mana pun.
- */
 final readonly class Uang implements JsonSerializable
 {
     private function __construct(public int $rupiah)
     {
-        if ($rupiah < 0) {
-            throw new InvalidArgumentException('Uang tidak boleh negatif.');
-        }
     }
 
     public static function dari(int $rupiah): self
     {
+        if ($rupiah < 0) {
+            throw new InvalidArgumentException(
+                'Nilai uang tidak boleh negatif.'
+            );
+        }
+
         return new self($rupiah);
     }
 
@@ -29,15 +29,17 @@ final readonly class Uang implements JsonSerializable
         return new self(0);
     }
 
-    public function tambah(Uang $lain): self
+    public function tambah(self $lain): self
     {
         return new self($this->rupiah + $lain->rupiah);
     }
 
-    public function kurang(Uang $lain): self
+    public function kurang(self $lain): self
     {
-        if ($this->rupiah < $lain->rupiah) {
-            throw new InvalidArgumentException('Hasil pengurangan tidak boleh negatif.');
+        if ($lain->rupiah > $this->rupiah) {
+            throw new InvalidArgumentException(
+                'Pengurangan menghasilkan nilai negatif.'
+            );
         }
 
         return new self($this->rupiah - $lain->rupiah);
@@ -45,14 +47,36 @@ final readonly class Uang implements JsonSerializable
 
     public function kali(int $pengali): self
     {
+        if ($pengali < 0) {
+            throw new InvalidArgumentException(
+                'Pengali tidak boleh negatif.'
+            );
+        }
+
         return new self($this->rupiah * $pengali);
     }
 
     public function persen(int $persen): self
     {
-        $hasil = intdiv($this->rupiah * $persen + 50, 100);
+        if ($persen < 0 || $persen > 100) {
+            throw new InvalidArgumentException(
+                'Persentase harus di antara 0 dan 100.'
+            );
+        }
 
-        return new self($hasil);
+        return new self(
+            intdiv($this->rupiah * $persen + 50, 100)
+        );
+    }
+
+    public function sama(self $lain): bool
+    {
+        return $this->rupiah === $lain->rupiah;
+    }
+
+    public function lebihDari(self $lain): bool
+    {
+        return $this->rupiah > $lain->rupiah;
     }
 
     public function format(): string
