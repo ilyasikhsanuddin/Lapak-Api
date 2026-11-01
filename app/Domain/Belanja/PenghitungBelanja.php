@@ -10,8 +10,13 @@ use InvalidArgumentException;
 final readonly class PenghitungBelanja
 {
     public function __construct(private int $komisiPersen)
-    {
+{
+    if ($komisiPersen < 0 || $komisiPersen > 100) {
+        throw new InvalidArgumentException(
+            'Persentase komisi harus antara 0 sampai 100.'
+        );
     }
+}
 
     /**
      * @param list<BarisBelanja> $baris

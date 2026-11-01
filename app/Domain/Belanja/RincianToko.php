@@ -21,15 +21,15 @@ final readonly class RincianToko
     ) {
     }
 
-   public function total(): Uang
-{
-    return $this->subtotal->tambah($this->ongkir);
-}
+    public function total(): Uang
+    {
+        return $this->subtotal->tambah($this->ongkir);
+    }
 
-public function bagianPenjual(): Uang
-{
-    return $this->subtotal
-        ->kurang($this->komisi)
-        ->tambah($this->ongkir);
-}
+    public function bagianPenjual(): Uang
+    {
+        return $this->subtotal
+            ->kurang($this->komisi)
+            ->tambah($this->ongkir);
+    }
 }

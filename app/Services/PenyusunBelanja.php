@@ -64,7 +64,7 @@ final class PenyusunBelanja
         }
 
         return (new PenghitungBelanja(
-            config('lapak.komisi_persen')
+            (int) config('lapak.komisi_persen')
         ))->hitung($baris, $toko);
     }
 }
