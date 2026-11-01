@@ -27,8 +27,13 @@ return [
     | same cache driver to group types of items stored in your caches.
     |
     | Supported drivers: "array", "database", "file", "memcached",
+<<<<<<< HEAD
     |                    "redis", "dynamodb", "storage", "octane",
     |                    "session", "failover", "null"
+=======
+    |                    "redis", "dynamodb", "octane",
+    |                    "failover", "null"
+>>>>>>> origin/main
     |
     */
 
@@ -50,6 +55,7 @@ return [
         'file' => [
             'driver' => 'file',
             'path' => storage_path('framework/cache/data'),
+<<<<<<< HEAD
             'lock_path' => storage_path('framework/cache/locks'),
         ],
 
@@ -57,6 +63,9 @@ return [
             'driver' => 'storage',
             'disk' => env('CACHE_STORAGE_DISK'),
             'path' => env('CACHE_STORAGE_PATH', 'framework/cache/data'),
+=======
+            'lock_path' => storage_path('framework/cache/data'),
+>>>>>>> origin/main
         ],
 
         'memcached' => [
@@ -120,6 +129,7 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
 
+<<<<<<< HEAD
     /*
     |--------------------------------------------------------------------------
     | Serializable Classes
@@ -133,4 +143,6 @@ return [
 
     'serializable_classes' => false,
 
+=======
+>>>>>>> origin/main
 ];

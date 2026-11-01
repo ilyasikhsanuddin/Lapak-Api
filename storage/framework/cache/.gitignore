@@ -1,4 +1,7 @@
 *
 !data/
+<<<<<<< HEAD
 !locks/
+=======
+>>>>>>> origin/main
 !.gitignore
