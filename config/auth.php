@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 use App\Models\User;
-=======
-use App\Models\Pengguna;
->>>>>>> origin/main
 
 return [
 
@@ -68,11 +64,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-<<<<<<< HEAD
             'model' => env('AUTH_MODEL', User::class),
-=======
-            'model' => env('AUTH_MODEL', Pengguna::class),
->>>>>>> origin/main
         ],
 
         // 'users' => [

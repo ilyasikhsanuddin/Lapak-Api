@@ -45,11 +45,7 @@ return [
     | utilizes the Monolog PHP logging library, which includes a variety
     | of powerful log handlers and formatters that you're free to use.
     |
-<<<<<<< HEAD
     | Available drivers: "single", "daily", "monthly", "slack", "syslog",
-=======
-    | Available drivers: "single", "daily", "slack", "syslog",
->>>>>>> origin/main
     |                    "errorlog", "monolog", "custom", "stack"
     |
     */
@@ -73,7 +69,6 @@ return [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
-<<<<<<< HEAD
             'max_files' => env('LOG_DAILY_DAYS', 14),
             'replace_placeholders' => true,
         ],
@@ -83,9 +78,6 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'max_files' => 3,
-=======
-            'days' => env('LOG_DAILY_DAYS', 14),
->>>>>>> origin/main
             'replace_placeholders' => true,
         ],
 
