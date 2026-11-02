@@ -48,4 +48,4 @@
 | Bagian | Status |
 |---|---|
 | A1: `ResponsApi` dan `Controller` | PR #6, menunggu tinjauan |
-| B1: penanganan galat, health, CI | Menunggu jendela A selesai di-merge |
+| B1: penanganan galat, health, CI | PR #8, draf |
