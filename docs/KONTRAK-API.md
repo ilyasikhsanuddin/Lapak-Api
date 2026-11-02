@@ -74,7 +74,7 @@ mengubah kontrak; ubah lewat PR milik D5 dan beri tahu seluruh tim.
 
 ## 7. Header
 
-- `X-Request-Id`: dibuat atau diteruskan oleh middleware `IdPermintaan` pada setiap respons API,
+- `X-Request-Id`: selalu dibuat oleh middleware (nilai kiriman klien tidak dipakai) `IdPermintaan` pada setiap respons API,
   dipakai untuk menelusuri log (B1).
 
 ## 8. Endpoint sistem
